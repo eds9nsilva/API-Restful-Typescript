@@ -1,7 +1,13 @@
-import {Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn} from 'typeorm';
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 
 @Entity('products')
-class Product{
+class Product {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
@@ -15,9 +21,9 @@ class Product{
   quantity: number;
 
   @CreateDateColumn()
-  created_at:Date;
+  created_at: Date;
 
-  @UpdateDateColumn();
+  @UpdateDateColumn()
   updated_at: Date;
 }
 
