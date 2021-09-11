@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import CreateUserServices from '../services/CreateUserService';
+import DeleteUserServices from '../services/DeleteUseService';
 import ListUserServices from '../services/ListUserService';
 
 export default class UserController {
@@ -18,5 +19,12 @@ export default class UserController {
       password,
     });
     return response.json(user);
+  }
+
+  public async delete(request: Request, response: Response): Promise<Response> {
+    const { id } = request.params;
+    const deleteUser = new DeleteUserServices();
+    await deleteUser.execute({ id });
+    return response.json([]);
   }
 }
