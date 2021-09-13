@@ -28,12 +28,11 @@ class UpdateUserAvatarService {
       if (userAvatarFileExists) {
         await fs.promises.unlink(userAvatarFilePath);
       }
-
-      user.avatar = avatarFilename;
-
-      await usersRepository.save(user);
     }
 
+    user.avatar = avatarFilename;
+
+    await usersRepository.save(user);
     return user;
   }
 }
