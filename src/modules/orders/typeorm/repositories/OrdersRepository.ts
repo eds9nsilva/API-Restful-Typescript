@@ -1,6 +1,6 @@
-import Customer from '@modules/customers/typeorm/entities/Customer';
 import { EntityRepository, Repository } from 'typeorm';
 import Order from '../entities/Order';
+import Customer from '@modules/customers/typeorm/entities/Customer';
 
 interface IProduct {
   product_id: string;
@@ -19,6 +19,7 @@ class OrdersRepository extends Repository<Order> {
     const order = this.findOne(id, {
       relations: ['order_products', 'customer'],
     });
+
     return order;
   }
 
@@ -27,8 +28,11 @@ class OrdersRepository extends Repository<Order> {
       customer,
       order_products: products,
     });
+
     await this.save(order);
+
     return order;
   }
 }
+
 export default OrdersRepository;
