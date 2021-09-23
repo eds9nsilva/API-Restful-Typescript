@@ -1,3 +1,4 @@
+import { classToClass } from 'class-transformer';
 import { Request, Response } from 'express';
 import CreateUserServices from '../services/CreateUserService';
 import DeleteUserServices from '../services/DeleteUseService';
@@ -7,7 +8,7 @@ export default class UserController {
   public async index(request: Request, response: Response): Promise<Response> {
     const listUser = new ListUserServices();
     const users = await listUser.execute();
-    return response.json(users);
+    return response.json(classToClass(users));
   }
   public async create(request: Request, response: Response): Promise<Response> {
     const { name, email, password } = request.body;
@@ -18,7 +19,7 @@ export default class UserController {
       email,
       password,
     });
-    return response.json(user);
+    return response.json(classToClass(user));
   }
 
   public async delete(request: Request, response: Response): Promise<Response> {
