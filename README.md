@@ -18,6 +18,7 @@ API Restful desenvolvida durante o curso [API Restful Javascript com Node.js, Ty
 - `celebrate` Para validação dos dados
 - `express`
 - `jsonwebtoken` Para autenticação JWT
-- `multer`
+- `multer` Para upload de arquivos
 - `redis` Para criação de cache da aplicação
+- `nodemailer` Para envio de e-mail
 ---
