@@ -52,6 +52,7 @@ yarn start
 #### Products (rota)
 POST: base_url/product
 <br>
+> Dados enviados como JSON
 ```
 {
   "name": "nome do produto",
