@@ -1,6 +1,6 @@
 # API-Restful-Typescript
 ### Descrição :memo: :page_facing_up:
-API Restful desenvolvida duranto o curso [API Restful Javascript com Node.js, Typescript, TypeORM etc](https://www.udemy.com/course/api-restful-de-vendas/)
+API Restful desenvolvida durante o curso [API Restful Javascript com Node.js, Typescript, TypeORM etc](https://www.udemy.com/course/api-restful-de-vendas/)
 <br>
 <p align="center">
 <img src="https://img.shields.io/badge/STATUS-CONCLUÍDO-green?style=for-the-badge"/>
