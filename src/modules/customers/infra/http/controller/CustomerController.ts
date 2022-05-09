@@ -1,9 +1,11 @@
 import { Request, Response } from 'express';
+import { container } from 'tsyringe';
 import CreateCustomerServices from '../../../services/CreateCustomerService';
 import DeleteCustomerService from '../../../services/DeleteCustomerService';
 import ListCustomerService from '../../../services/ListCustomerService';
 import ShowCustomerService from '../../../services/ShowCustomerService';
 import UpdateCustomerService from '../../../services/UpdateCustomerService';
+import CustomersRepositories from '../../typeorm/repositories/CustomersRepository';
 
 export default class CustomerController {
   public async index(request: Request, response: Response): Promise<Response> {
@@ -22,8 +24,7 @@ export default class CustomerController {
 
   public async create(request: Request, response: Response): Promise<Response> {
     const { name, email } = request.body;
-
-    const createCustomer = new CreateCustomerServices();
+    const createCustomer = container.resolve(CreateCustomerServices);
     const costumer = await createCustomer.execute({
       name,
       email,
